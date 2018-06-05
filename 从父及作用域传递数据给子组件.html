@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>从父级作用域传递数据给子组件</title>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <todo-item v-for="item in items" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    </ol>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{todo.text}}</li>'
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [
+                {id: 1, text: '学习 JavaScript。'},
+                {id: 2, text: '学习 Java.'},
+                {id: 3, text: '这是一个代办事项'}
+            ]
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例属性和方法</title>
+</head>
+<body>
+<div id="app">
+    <p>{{a}}</p>
+    <input type="text" v-model="a"/>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var data = {a: 1};
+    var vm = new Vue({
+        el: '#app',
+        data: data
+    });
+
+    console.log(vm.$data === data);
+    console.log(vm.$el === document.getElementById('app'));
+    vm.$watch('a', function(newValue, oldValue) {
+        console.log('newValue: ' + newValue);
+        console.log('olkValue: ' + oldValue);
+        console.log('这个回调函数在 vm.a 改变后调用。');
+    })
+</script>
+</body>
+</html>

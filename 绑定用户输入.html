@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定用户输入</title>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <input type="text" v-model="message"/>
+</div>
+<script src="vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        }
+    });
+</script>
+</body>
+</html>
