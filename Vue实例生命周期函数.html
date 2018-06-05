@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue实例生命周期函数</title>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <input type="text" v-model="message"/>
+</div>
+
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue.js!'
+        },
+        beforeCreate: function() {
+            console.log('在Vue实例创建前调用。');
+        },
+        created: function() {
+            console.log('在Vue实例创建后调用。');
+        },
+        beforeMount: function() {
+            console.log('在Vue实例挂载之前调用。');
+        },
+        mounted: function() {
+            console.log('在Vue实例挂载之后调用。');
+        },
+        beforeUpdate: function() {
+            console.log('在Vue实例更新前调用。');
+        },
+        updated: function() {
+            console.log('在Vue实例更新之后调用。');
+        },
+        beforeDestroy: function() {
+            console.log('在Vue实例销毁之前调用。');
+        },
+        destroyed: function() {
+            console.log('在Vue实例销毁之后调用。');
+        }
+    });
+</script>
+</body>
+</html>
